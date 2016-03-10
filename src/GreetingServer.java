@@ -12,7 +12,6 @@ public class GreetingServer extends Thread {
     public void run() {
         while (true) {
             try {
-
                 System.out.println("Waiting for client on port " +
                         serverSocket.getLocalPort() + "...");
                 Socket server = serverSocket.accept();
@@ -30,7 +29,7 @@ public class GreetingServer extends Thread {
                 System.out.println("Socket timed out!");
                 break;
             } catch (IOException e) {
-                System.out.println(e);;
+                System.out.println(e);
                 break;
             }
         }
@@ -42,7 +41,7 @@ public class GreetingServer extends Thread {
             Thread t = new GreetingServer(port);
             t.start();
         } catch (IOException e) {
-            System.out.println(e);;
+            System.out.println(e);
         }
     }
 }
